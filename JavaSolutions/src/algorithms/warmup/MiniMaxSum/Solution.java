@@ -1,10 +1,6 @@
 package algorithms.warmup.MiniMaxSum;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
 
@@ -14,6 +10,30 @@ public class Solution {
         for(int arr_i=0; arr_i < 5; arr_i++){
             arr[arr_i] = in.nextInt();
         }
+
+        int n = arr.length;
+        long min = Long.MAX_VALUE;
+        long max = Long.MIN_VALUE;
+        for (int i = 0; i < n; ++i) {
+            long currResult = 0L;
+
+            for (int j = 0; j < n; ++j) {
+                if (i == j) {
+                    continue; // skip one number
+                }
+                currResult += arr[j];
+            }
+
+            if (currResult < min) {
+                min = currResult;
+            }
+
+            if (currResult > max) {
+                max = currResult;
+            }
+        }
+
+        System.out.println(min + " " + max);
     }
 }
 

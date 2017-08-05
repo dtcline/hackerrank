@@ -1,15 +1,16 @@
 package algorithms.warmup.AVeryBigSum;
 
-import java.io.*;
+import java.math.BigInteger;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
 
-    static long aVeryBigSum(int n, long[] ar) {
-        // Complete this function
+    static BigInteger aVeryBigSum(int n, long[] ar) {
+        BigInteger result = BigInteger.ZERO;
+        for (long num : ar) {
+            result = result.add(BigInteger.valueOf(num)); // BigInteger is immutable so reassignment necessary
+        }
+        return result;
     }
 
     public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class Solution {
         for(int ar_i = 0; ar_i < n; ar_i++){
             ar[ar_i] = in.nextLong();
         }
-        long result = aVeryBigSum(n, ar);
+        BigInteger result = aVeryBigSum(n, ar);
         System.out.println(result);
     }
 }

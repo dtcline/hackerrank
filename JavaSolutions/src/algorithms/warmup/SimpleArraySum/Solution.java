@@ -1,15 +1,15 @@
 package algorithms.warmup.SimpleArraySum;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
 
     static int simpleArraySum(int n, int[] ar) {
-        // Complete this function
+        int result = 0;
+        for (int i : ar) {
+            result += i;
+        }
+        return result;
     }
 
     public static void main(String[] args) {

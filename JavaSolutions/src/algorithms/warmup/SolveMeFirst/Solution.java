@@ -1,16 +1,11 @@
 package algorithms.warmup.SolveMeFirst;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
 
     static int solveMeFirst(int a, int b) {
-        // Hint: Type return a+b; below
-
+        return a + b;
     }
 
 

@@ -1,19 +1,24 @@
 package algorithms.implementation.AppleAndOrange;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class Solution {
 
-    // Complete the countApplesAndOranges function below.
+    static void printHitCounts(int s, int t, int treePos, int[] fruitOffsets) {
+        int count = 0;
+        for (int offset : fruitOffsets) {
+            int fruitPos = treePos + offset;
+            if (fruitPos >= s && fruitPos <= t) {
+                ++count;
+            }
+        }
+
+        System.out.println(count);
+    }
+
     static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
-
-
+        printHitCounts(s, t, a, apples);
+        printHitCounts(s, t, b, oranges);
     }
 
     private static final Scanner scanner = new Scanner(System.in);

@@ -1,21 +1,27 @@
 package algorithms.implementation.GradingStudents;
 
 import java.io.*;
-import java.math.*;
-import java.text.*;
 import java.util.*;
-import java.util.regex.*;
 
 public class Solution {
+    static int roundGrade(int grade) {
+        if (grade < 38) return grade;
+        if (grade >= 100) return 100;
 
-    /*
-     * Complete the gradingStudents function below.
-     */
+        int nextMultiple = (grade / 5) * 5 + 5;
+
+        return (nextMultiple - grade < 3) ? nextMultiple : grade;
+    }
+
     static int[] gradingStudents(int[] grades) {
-        /*
-         * Write your code here.
-         */
+        int n = grades.length;
+        int[] result = new int[n];
 
+        for (int i = 0; i < n; ++i) {
+            result[i] = roundGrade(grades[i]);
+        }
+
+        return result;
     }
 
     private static final Scanner scan = new Scanner(System.in);

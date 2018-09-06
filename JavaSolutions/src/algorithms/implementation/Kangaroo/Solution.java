@@ -12,8 +12,34 @@ public class Solution {
 
     // Complete the kangaroo function below.
     static String kangaroo(int x1, int v1, int x2, int v2) {
+        String yes = "YES";
+        String no = "NO";
 
+        int first1 = x1 + v1 * 1;
+        int first2 = x2 + v2 * 1;
 
+        if (first1 == first2) {
+            return yes;
+        }
+
+        for (int i = 2; i < 10000; ++i) {
+            int c1 = x1 + v1 * i;
+            int c2 = x2 + v2 * i;
+
+            if (c1 == c2) {
+                return yes;
+            }
+
+            if (first1 < first2 && c1 > c2) {
+                return no;
+            }
+
+            if (first1 > first2 && c1 < c2) {
+                return no;
+            }
+        }
+
+        return no;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
